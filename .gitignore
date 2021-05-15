@@ -1,0 +1,6 @@
+.vscode
+htmlcov
+tracker
+.coverage
+.env
+db.sqlite3
