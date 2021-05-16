@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from .views import *
 from rest_framework_simplejwt.views import (TokenObtainPairView,TokenRefreshView)
+from django.conf import settings
+react_routes = getattr(settings, 'REACT_ROUTES', [])
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
@@ -29,3 +31,8 @@ urlpatterns = [
     path('',homeView, name = "homeview"),
     path('main/',include('mainapp.urls'), name = "main"),
 ]
+
+for route in react_routes:
+    urlpatterns += [
+        path(f'{route}',homeView, name = 'homeView'),
+    ]
