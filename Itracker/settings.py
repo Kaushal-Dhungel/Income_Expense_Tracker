@@ -94,12 +94,14 @@ if DEBUG:
 else:
     DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6e1arqb9dsa3u',
+        'HOST': 'ec2-54-87-112-29.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'ygpicjgelycdgk',
+        'PASSWORD': 'e30d6deef6380a0a776ab11f8b1e4d4dc9a011741c2fa06fb5fe77ec067adef6',
     }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
