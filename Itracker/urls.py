@@ -18,6 +18,9 @@ from django.urls import path,include
 from .views import *
 from rest_framework_simplejwt.views import (TokenObtainPairView,TokenRefreshView)
 from django.conf import settings
+from django.views.static import serve
+from django.conf.urls import url
+
 react_routes = getattr(settings, 'REACT_ROUTES', [])
 
 urlpatterns = [
@@ -30,6 +33,7 @@ urlpatterns = [
     path('getname',GetNameView.as_view(),name = "getname"),
     path('',homeView, name = "homeview"),
     path('main/',include('mainapp.urls'), name = "main"),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root':settings.STATIC_ROOT}),
 ]
 
 for route in react_routes:
