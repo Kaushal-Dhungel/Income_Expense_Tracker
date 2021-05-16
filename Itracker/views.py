@@ -53,6 +53,8 @@ class RegisterView(APIView):
 			return Response({'Username Already Exists. Please Try New Username'},status=status.HTTP_400_BAD_REQUEST)
 
 		except Exception as e:
+			print("logging in error")
+			print(e)
 			return Response({"Unknown Error Occured. Please Try Later"},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class CheckUser(APIView):
@@ -69,6 +71,8 @@ class CheckUser(APIView):
 				return Response({"False"},status = status.HTTP_200_OK)
 
 			except Exception as e:
+				print("error is")
+				print(e)
 				return Response({'Some error occured'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 		else:
@@ -80,4 +84,6 @@ class CheckUser(APIView):
 				return Response({"False"},status = status.HTTP_200_OK)
 
 			except Exception as e:
+				print("error is")
+				print(e)
 				return Response({'Some error occured'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
