@@ -27,7 +27,7 @@ class RegisterView(APIView):
 
 		try:
 			user = User.objects.create_user(username, email, password)
-			uri = 'https://etracker.herokuapp.com/api/token/'
+			uri = 'https://trackmoneyflow.herokuapp.com/api/token/'
 
 			if settings.DEBUG:
 				uri = 'http://localhost:8000/api/token/'
